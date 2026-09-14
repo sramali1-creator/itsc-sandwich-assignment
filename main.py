@@ -5,7 +5,7 @@ class SandwichMaker:
     def __init__(self, machine_resources):
         self.resources = machine_resources
 
-    # Checks whether there are enough resources to make the requested sandwich
+    # Verifies enough ingredients are available before proceeding
     def check_resources(self, ingredients):
         """Returns True if there are enough resources to make the sandwich, False otherwise."""
         for item in ingredients:
@@ -13,7 +13,7 @@ class SandwichMaker:
                 print(f"Sorry there is not enough {item}.")
                 return False
         return True
-
+it
     # Prompts the user to insert coins and calculates the total value
     def process_coins(self):
         """Prompts the user for coins and returns the total monetary value inserted."""
