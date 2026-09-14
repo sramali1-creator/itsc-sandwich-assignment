@@ -1,7 +1,7 @@
 class SandwichMaker:
     """A ham sandwich vending machine."""
 
-    # Initializes the machine with a starting set of resources
+    # Sets up the machine with starting resources
     def __init__(self, machine_resources):
         self.resources = machine_resources
 
