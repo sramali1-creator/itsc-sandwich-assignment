@@ -14,7 +14,7 @@ class SandwichMaker:
                 return False
         return True
 it
-    # Prompts the user to insert coins and calculates the total value
+    # Collects coin input and returns the total dollar amount
     def process_coins(self):
         """Prompts the user for coins and returns the total monetary value inserted."""
         print("Please insert coins.")
