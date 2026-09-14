@@ -1,9 +1,11 @@
 class SandwichMaker:
     """A ham sandwich vending machine."""
 
+    # Initializes the machine with a starting set of resources
     def __init__(self, machine_resources):
         self.resources = machine_resources
 
+    # Checks whether there are enough resources to make the requested sandwich
     def check_resources(self, ingredients):
         """Returns True if there are enough resources to make the sandwich, False otherwise."""
         for item in ingredients:
@@ -12,6 +14,7 @@ class SandwichMaker:
                 return False
         return True
 
+    # Prompts the user to insert coins and calculates the total value
     def process_coins(self):
         """Prompts the user for coins and returns the total monetary value inserted."""
         print("Please insert coins.")
@@ -23,6 +26,7 @@ class SandwichMaker:
         total = (large_dollars * 1) + (half_dollars * 0.5) + (quarters * 0.25) + (nickels * 0.05)
         return total
 
+    # Checks if the coins inserted cover the cost, and gives change if needed
     def transaction_result(self, coins, cost):
         """Returns True if payment covers the cost (and gives change), False otherwise."""
         if coins < cost:
@@ -33,18 +37,21 @@ class SandwichMaker:
             print(f"Here is ${change} in change.")
             return True
 
+    # Deducts the used ingredients from the machine's resources and serves the sandwich
     def make_sandwich(self, sandwich_size, order_ingredients):
         """Deducts the sandwich's ingredients from the machine's resources."""
         for item in order_ingredients:
             self.resources[item] -= order_ingredients[item]
         print(f"{sandwich_size} sandwich is ready. Bon appetit!")
 
+    # Displays the current remaining resources
     def report(self):
         print(f"Bread: {self.resources['bread']} slice(s)")
         print(f"Ham: {self.resources['ham']} slice(s)")
         print(f"Cheese: {self.resources['cheese']} pound(s)")
 
 
+# Recipes dictionary: defines ingredients and cost for each sandwich size
 recipes = {
     "small": {
         "ingredients": {"bread": 2, "ham": 4, "cheese": 4},
@@ -60,6 +67,7 @@ recipes = {
     },
 }
 
+# Starting resources for the machine
 resources = {
     "bread": 12,
     "ham": 18,
@@ -67,6 +75,7 @@ resources = {
 }
 
 
+# Main program loop that runs the sandwich machine
 def main():
     machine = SandwichMaker(resources)
     is_on = True
