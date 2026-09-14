@@ -37,7 +37,8 @@ it
             print(f"Here is ${change} in change.")
             return True
 
-    # Deducts the used ingredients from the machine's resources and serves the sandwich
+
+    # Updates resources and confirms the sandwich is ready
     def make_sandwich(self, sandwich_size, order_ingredients):
         """Deducts the sandwich's ingredients from the machine's resources."""
         for item in order_ingredients:
